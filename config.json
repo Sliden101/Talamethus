@@ -2,11 +2,6 @@
 	"token": "",
 	"guild": "",
 	"prefix": ".",
-<<<<<<< HEAD
 	"missing_permission": "You require the `{ADMINISTRATOR}` permission to use this command.",
     "ip": "placeholder 0" 
 }
-=======
-	"missing_permission": "You require the `{ADMINISTRATOR}` permission to use this command."
-}
->>>>>>> dfc7a9dc874c8dc0b51f18495cda040529e818ad
