@@ -1,18 +1,20 @@
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require("discord.js")
 
-module.exports.run= async (bot, message, args) => {
-    const Target = message.mentions.users.first() || message.author
 
-    const Response = new MessageEmbed()
-    .setColor('RANDOM')
-    .setAuthor(Target.tag,'\'s Avatar')
-    .setImage(Target.displayAvatarURl((dynamic: true)))
-    .setFooter(`Requested By ${message.author.tag}`, message.author.displayAvatarURl((dynamic; true)))
+module.exports.run = async (bot, message, args) => {
+	const member = message.mentions.members.first() || message.member;
     
-    message.reply((embeds: [Response]));
+    message.channel.send({
+		embeds: [
+    	new MessageEmbed()
+        	.setTitle(`${member.user.tag}'s avatar`)
+        	.setImage(member.user.displayAvatarURL({dynamic: true, size: 512 }))
+        	.setColor('RANDOM')
+			.setDescription('Cum')
+		]}
+    );
 }
-module.exports.info= {
-    name: "avatar",
-    aliases: ['pfp', 'av'],
-    description: "Displays the author/mentioned user's avatar"
+module.exports.info = {
+    name: 'avatar', // default = file name (without the extention)
+    description: "Shows users avatars." // default is "None"
 }
