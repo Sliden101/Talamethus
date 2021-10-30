@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const config = require('./config.json')
 
-exports.run = async(client, message, args) => {
+module.exports.run = async(client, message, args) => {
     let category = message.guild.channels.cache.find(c => c.id === config.ticketcategory && c.type === "category");
     let categorybackup = message.guild.channels.cache.find(c => c.id === config.ticketcategorybackup && c.type === "category");
     let categorybackup2 = message.guild.channels.cache.find(c => c.id === config.ticketcategorybackup2 && c.type === "category");
@@ -47,3 +47,7 @@ exports.run = async(client, message, args) => {
             .setColor(message.guild.me.displayHexColor)
             .setTimestamp()
         channel.send(`${message.author}`, embed)
+module.exports.info = {
+    name: 'new', // default = file name (without the extention)
+    description: "Makes a new ticket." // default is "None"
+}
