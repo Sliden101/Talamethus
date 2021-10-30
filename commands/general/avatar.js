@@ -10,7 +10,8 @@ module.exports.run = async (bot, message, args) => {
         	.setTitle(`${member.user.tag}'s avatar`)
         	.setImage(member.user.displayAvatarURL({dynamic: true, size: 512 }))
         	.setColor('RANDOM')
-			.setDescription('Cum')
+			.setDescription('Avatar!')
+			.setTimestamp()
 		]}
     );
 }

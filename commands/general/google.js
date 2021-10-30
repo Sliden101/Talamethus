@@ -13,7 +13,7 @@ module.exports.run = (bot, message, args) => {
             embed.addField((index + 1) + ": " + item.title, "<" + item.link + ">");
         });
         
-        message.channel.send(embed);
+        message.channel.send({embeds:[embed]});
     }).catch(e => {
         // any possible errors that might have occurred (like no Internet connection)
     });

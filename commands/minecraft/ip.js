@@ -1,8 +1,13 @@
 const { MessageEmbed } = require("discord.js")
-const config = require("./config.json")
+const config = require("../../config.json")
 module.exports.run = async (bot, message, args) => {
     message.channel.send({
-        embeds: [new MessageEmbed().setTitle("Here!").setColor("RED").setDescription(`IP: ${config.ip}ms`)]
+        embeds: [
+        new MessageEmbed()
+            .setTitle("Here!")
+            .setColor("RANDOM")
+            .setDescription(`IP: ${config.ip}`)
+        ]
     });
 }
 module.exports.info = {
