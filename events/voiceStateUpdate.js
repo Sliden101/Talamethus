@@ -1,39 +1,22 @@
-const { config } = require('process');
-const transliterate = require('transliteration');
-const confing = require('./config.json');
-module.exports = async(client, oldV, newV) => {
-    let guild = newV.guild;
-
-    if (oldV.channelID === newV.channelID || enabled.customVoiceChannels == false) return;
+const bot
+const { Collection } = require('discord.js')
+const config = require('../config.json')
+const voiceCollection = new Collection();
 
 
-    if (oldV.channelID != null && oldV.channelID != config.vcchild && oldV.channel.parentID === config.vcparent) {
-        if (client.pvc.get(oldV.channelID) != null && client.pvc.get(oldV.channelID).owner == oldV.member.id) {
-            oldV.channel.delete();
-            client.pvc.delete(oldV.channelID);
-        }
+bot.on("voiceStateUpdate", async (oldState, newState) => {
+    const user = await client.users.fetch(newState.id)
+    const member = newState.guild.member(user);
+
+    if (!oldState.channel && newState.channel.id === config.vcchild) {
+        const channel = await newState.guild.channels.create(user.tag, {
+            type: 'voice',
+            parent: newState.channel.parent,
+        });
+        member.voice.setChannel(channel);
+        voiceCollection.set(user.id, channel.id);
+    } else if(!newState.channel){
+        if (oldState.channel === voiceCollection.get(newstate.id)) 
+        return oldState.channel.delete()
     }
-
-    if (newV.channelID === config.vcchild) {
-        let cleanName = transliterate.slugify(newV.member.user.username);
-        if (cleanName == '') cleanName = 'unknown';
-        let vc = await guild.channels.create(`${cleanName}'s Room`, {
-            type: "voice",
-        })
-
-        vc.overwritePermissions([{
-            id: guild.id,
-            deny: ["CONNECT", "VIEW_CHANNEL"]
-        }, {
-            id: newV.member.id,
-            allow: ["SPEAK", "STREAM", "CONNECT", "VIEW_CHANNEL"]
-        }])
-
-        vc.setParent(config.vcparent);
-        newV.setChannel(vc.id);
-        client.pvc.set(vc.id, {
-            channelID: vc.id,
-            owner: newV.member.id
-        })
-    }
-};
+})
