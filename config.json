@@ -3,11 +3,15 @@
 	"guild": "",
 	"prefix": ".",
 	"missing_permission": "You require the `{ADMINISTRATOR}` permission to use this command.",
-    	"ip": "placeholder 0",
+    "ip": "placeholder 0",
 	"vcparent": "placeholder 1",
 	"vcchild": "placeholder 2",
 	"ticketcategory": "placeholder 3",
 	"ticketcategorybackup": "placeholder 4",
 	"ticketcategorybackup2": "placeholder 5",
-	"staffid": "placeholder 6"
+	"staffid": "placeholder 6",
+	"title" : "Minecraft Server: {server-ip}",
+	"field0" : "Description",
+	"field2" : "Version"
+
 }
