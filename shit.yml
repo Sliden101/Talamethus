@@ -1,4 +1,0 @@
-Minecraft:
-  Server:
-    Fields:
-      - { name: "Players", value: "Online: {online}\nMax: {max}" }
