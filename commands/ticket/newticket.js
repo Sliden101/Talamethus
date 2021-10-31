@@ -1,7 +1,7 @@
-const Discord = require('discord.js')
-const config = require('./config.json')
-
-module.exports.run = async(client, message, args) => {
+const { MessageEmbed }= require('discord.js')
+const config = require('../../config.json')
+// this shit still broken smh
+module.exports.run = async(bot, message, args) => {
     let category = message.guild.channels.cache.find(c => c.id === config.ticketcategory && c.type === "category");
     let categorybackup = message.guild.channels.cache.find(c => c.id === config.ticketcategorybackup && c.type === "category");
     let categorybackup2 = message.guild.channels.cache.find(c => c.id === config.ticketcategorybackup2 && c.type === "category");
@@ -41,13 +41,15 @@ module.exports.run = async(client, message, args) => {
 
     message.channel.send(`🎫 | **You've** opened a **ticket**, you can **check** it out **here**: ${channel}.`)
 
-        const embed = new Discord.MessageEmbed()
-            .setAuthor(`${client.user.username} | Tickets`, client.user.avatarURL())
+        const embed = new MessageEmbed()
+            .setAuthor(`${bot.user.username} | Tickets`, bot.user.avatarURL())
             .setDescription(`> You **succesfully** made a **ticket**, please **do not** ping staff it will not fix **your problem** faster.`)
-            .setColor(message.guild.me.displayHexColor)
+            .setColor("RANDOM")
             .setTimestamp()
         channel.send(`${message.author}`, embed)
+
+}
 module.exports.info = {
-    name: 'new', // default = file name (without the extention)
+    name: 'newticket', // default = file name (without the extention)
     description: "Makes a new ticket." // default is "None"
 }

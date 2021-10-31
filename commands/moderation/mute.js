@@ -1,1 +1,1 @@
-console.log('placeholdr')
+fuck this shit ill do it later
