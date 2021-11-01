@@ -11,5 +11,6 @@
 	"staffid": "placeholder 6",
 	"title" : "Minecraft Server: {server-ip}",
 	"field0" : "Description",
-	"field2" : "Version"
+	"field2" : "Version",
+	"welcome": "placeholder 7"
 }
