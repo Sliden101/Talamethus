@@ -4,7 +4,6 @@
 	"prefix": ".",
 	"missing_permission": "You require the `{ADMINISTRATOR}` permission to use this command.",
     "ip": "placeholder 0",
-	"vcparent": "placeholder 1",
 	"vcchild": "placeholder 2",
 	"ticketcategory": "placeholder 3",
 	"ticketcategorybackup": "placeholder 4",
@@ -13,5 +12,4 @@
 	"title" : "Minecraft Server: {server-ip}",
 	"field0" : "Description",
 	"field2" : "Version"
-
 }
