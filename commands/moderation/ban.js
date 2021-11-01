@@ -1,15 +1,15 @@
 const { MessageEmbed } = require("discord.js")
 
 module.exports.run = async (bot, message, args) =>{
-    if (msg.member.hasPermission("BAN_MEMBERS")) {
-        if (msg.members.mentions.first()) {
+    if (message.member.hasPermission("BAN_MEMBERS")) {
+        if (message.members.mentions.first()) {
             try {
-                msg.members.mentions.first().ban();
+                message.members.mentions.first().ban();
             } catch {
-                msg.reply("I do not have permissions to ban" + msg.members.mentions.first());
+                message.reply("I do not have permissions to ban" + message.members.mentions.first());
             }
         } else {
-            msg.reply("You do not have permissions to ban" + msg.members.mentions.first());
+            message.reply("You do not have permissions to ban" + message.members.mentions.first());
         }
     }
 }

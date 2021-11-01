@@ -1,15 +1,15 @@
 const { MessageEmbed } = require("discord.js")
 
 module.exports.run = async (bot, message, args) =>{
-    if (msg.member.hasPermission("KICK_MEMBERS")) {
-        if (msg.members.mentions.first()) {
+    if (message.member.hasPermission("KICK_MEMBERS")) {
+        if (message.members.mentions.first()) {
             try {
-                msg.members.mentions.first().kick();
+                message.members.mentions.first().kick();
             } catch {
-                msg.reply("I do not have permissions to kick " + msg.members.mentions.first());
+                message.reply("I do not have permissions to kick " + message.members.mentions.first());
             }
         } else {
-            msg.reply("You do not have permissions to kick " + msg.members.mentions.first());
+            message.reply("You do not have permissions to kick " + message.members.mentions.first());
         }
     }
 }
