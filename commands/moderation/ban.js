@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js")
 
-module.exports.run = async (bot, message,args) =>{
+module.exports.run = async (bot, message, args) =>{
     if (msg.member.hasPermission("BAN_MEMBERS")) {
         if (msg.members.mentions.first()) {
             try {
