@@ -12,6 +12,7 @@ module.exports.run = async (bot, message, args) =>{
             msg.reply("You do not have permissions to kick " + msg.members.mentions.first());
         }
     }
+}
 module.exports.info = {
     name: 'kick', // default = file name (without the extention)
     description: "Kicks the mentioned user." // default is "None"
