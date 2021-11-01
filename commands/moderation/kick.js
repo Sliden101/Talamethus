@@ -13,6 +13,6 @@ module.exports.run = async (bot, message, args) =>{
         }
     }
 module.exports.info = {
-    name: 'ban', // default = file name (without the extention)
-    description: "Bans the mentioned user." // default is "None"
+    name: 'kick', // default = file name (without the extention)
+    description: "Kicks the mentioned user." // default is "None"
 }
