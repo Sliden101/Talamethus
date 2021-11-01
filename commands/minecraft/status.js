@@ -14,19 +14,19 @@ module.exports.run = async (bot, message, args) => {
         await rp(server.pingURL).then(content => {
                 const json = JSON.parse(content);
                 if (json.error) fields.push({
-                    name: "ESASMC Offline",
-                    value: "ESASMC Offline"
+                    name: "ESASMC:",
+                    value: "Offline"
                 })
                 else {
                     const playerCount = json.players.online;
                     fields.push({
-                        name: `ESASMC: ${playerCount} player(s)`,
-                        value: `ESASMC: ${playerCount} player(s)`
+                        name: `ESASMC:`,
+                        value: `${playerCount} player(s)`
                     })
                 }
         })
         let embed = new MessageEmbed()
-            .setTitle("ESASMC Network Server Status")
+            .setTitle("Network Server Status")
             .setTimestamp()
             .setColor("RANDOM")
             .addFields(fields)
