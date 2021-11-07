@@ -1,4 +1,3 @@
-
 const { MessageEmbed } = require('discord.js')
 const config = require(ROOT_PATH + '/config.json');
 
