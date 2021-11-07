@@ -1,7 +1,6 @@
 {
 	"token": "",
-	"guild": "",
-	"prefix": ".",
+	"prefix": "-",
 	"missing_permission": "You require the `{ADMINISTRATOR}` permission to use this command.",
     "ip": "placeholder 0",
 	"vcchild": "placeholder 2",

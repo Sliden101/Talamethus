@@ -5,7 +5,7 @@ const config = require(ROOT_PATH + '/config.json');
 const { findCommand } = require('../utils/commandHandler');
 
 bot.on('messageCreate', async (message) => {
-    if (message.channel.type == 'dm' || message.author.bot == true || message.guild.id != config.guild || !message.content.startsWith(config.prefix)) return;
+    if (message.channel.type == 'dm' || message.author.bot == true || !message.content.startsWith(config.prefix)) return;
 
     let args = message.content.trim().slice(config.prefix.length).split(/ +/);
 
