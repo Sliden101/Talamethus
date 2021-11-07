@@ -13,7 +13,7 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
             parent: newState.channel.parent,
         });
         member.voice.setChannel(channel.id);
-       
+        
         voiceCollection.set(user.id, channel.id);
     } else if(!newState.channel){
         if (oldState.channelId === voiceCollection.get(newState.id)) 
