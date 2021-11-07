@@ -3,11 +3,14 @@ const { MessageEmbed } = require("discord.js")
 module.exports.run = async (bot, message, args) => {
     const randapi = require("@rilecraft/random-api")
     const hug = await randapi.getHug()
+    let sender = message.author
+    let recp = message.mentions.users.first()
+    if (!recp) return message.reply('You need to mention a user.')
     message.channel.send({
         embeds: [
             new MessageEmbed()
             .setColor("RANDOM")
-            .setDescription(`Ping: ${bot.ws.ping}ms`)
+            .setDescription(`${sender} hugs <@!${recp.id}>`)
             .setImage(hug)
             ]
     });
