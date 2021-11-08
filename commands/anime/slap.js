@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
     let { randapi } = require(ROOT_PATH + '/index');
-    const punch = await randapi.getPunch()
+    const slap = await randapi.getSlap()
     let sender = message.author
     let recp = message.mentions.users.first()
     if (!recp) return message.reply('You need to mention a user.')
@@ -10,8 +10,8 @@ module.exports.run = async (bot, message, args) => {
         embeds: [
             new MessageEmbed()
             .setColor("RANDOM")
-            .setDescription(`${sender} punches <@!${recp.id}>`)
-            .setImage(punch)
+            .setDescription(`${sender} pats <@!${recp.id}>`)
+            .setImage(pat)
             ]
     });
 }
@@ -21,6 +21,6 @@ module.exports.run = async (bot, message, args) => {
  */
 
 module.exports.info = {
-    name: 'punch', // default = file name (without the extention)
-    description: "Punches someone." // default is "None" //sponse
+    name: 'slap', // default = file name (without the extention)
+    description: "Slaps someone." // default is "None" //sponse
 }

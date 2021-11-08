@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const Discord = require('discord.js');
 const fs = require('fs');
 const config = require('./config.json');
-
+const randapi1 = require("@rilecraft/random-api")
 const { loadCommands } = require('./utils/commandHandler');
 
 let bot = new Discord.Client({
@@ -19,6 +19,7 @@ let bot = new Discord.Client({
 })
 
 exports.bot = bot;
+exports.randapi = randapi1
 global.ROOT_PATH = __dirname;
 
 // Event Handler

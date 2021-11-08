@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
-    const randapi = require("@rilecraft/random-api")
+    let { randapi } = require(ROOT_PATH + '/index');
     const hug = await randapi.getHug()
     let sender = message.author
     let recp = message.mentions.users.first()

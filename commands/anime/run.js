@@ -1,8 +1,8 @@
 const { MessageEmbed } = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
-    const randapi = require("@rilecraft/random-api")
-    const pout = await randapi.getPout()
+    let { randapi } = require(ROOT_PATH + '/index');
+    const run = await randapi.getRun()
     message.channel.send({
         embeds: [
             new MessageEmbed()
