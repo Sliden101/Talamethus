@@ -17,6 +17,6 @@ module.exports.run = async (bot, message, args) => {
  */
 
 module.exports.info = {
-    name: 'Pout', // default = file name (without the extention)
+    name: 'pout', // default = file name (without the extention)
     description: "Sends a pout gif." // default is "None" //sponse
 }
