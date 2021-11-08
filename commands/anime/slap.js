@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
             new MessageEmbed()
             .setColor("RANDOM")
             .setDescription(`${sender} pats <@!${recp.id}>`)
-            .setImage(pat)
+            .setImage(slap)
             ]
     });
 }

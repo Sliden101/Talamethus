@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
         embeds: [
             new MessageEmbed()
             .setColor("RANDOM")
-            .setImage(punch)
+            .setImage(run)
             ]
     });
 }
