@@ -19,7 +19,7 @@ let bot = new Discord.Client({
 })
 
 exports.bot = bot;
-exports.randapi = randapi1
+exports.randapi = randapi1;
 global.ROOT_PATH = __dirname;
 
 // Event Handler
