@@ -46,5 +46,8 @@ loadCommands(`${ROOT_PATH}/commands`).then(x => {
 bot.on('ready', () => {
     console.log("online");
 });
-
+bot.user.setActivity('Cumming hard',{
+    type: "PLAYING",
+    url: "https://www.twitch.tv/monstercat"
+});
 bot.login(config.token);
