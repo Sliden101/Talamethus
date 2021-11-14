@@ -2,12 +2,10 @@
 	"token": "",
 	"prefix": "-",
 	"missing_permission": "You require the `{ADMINISTRATOR}` permission to use this command.",
-    "ip": "placeholder 0",
-	"vcchild": "placeholder 2",
-	"ticketcategory": "placeholder 3",
-	"ticketcategorybackup": "placeholder 4",
-	"ticketcategorybackup2": "placeholder 5",
-	"staffid": "placeholder 6",
+    "ip": "",
+	"vcchild": "",
+	"ticketcategory": "",
+	"staffid": "",
 	"welcome": "",
 	"excludedfromantispam": ""
 }

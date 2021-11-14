@@ -1,2 +1,2 @@
-# Bot
-hewwo
+# Talamethus
+Just another bot
