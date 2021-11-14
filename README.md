@@ -1,2 +1,2 @@
-# Bot
+# Talamethus
 Just another bot
