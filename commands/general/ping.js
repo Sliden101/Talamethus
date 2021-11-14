@@ -12,10 +12,6 @@ module.exports.run = async (bot, message, args) => {
     });
 }
 
-/**
- * This is completely optional...
- */
-
 module.exports.info = {
     name: 'ping', // default = file name (without the extention)
     description: "Shows the bot's ping." // default is "None"

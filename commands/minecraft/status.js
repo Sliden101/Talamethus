@@ -3,8 +3,8 @@ const config = require(ROOT_PATH + "/config.json")
 const rp = require("request-promise");
 
 module.exports.run = async (bot, message, args) => {
-    const server =  { name: "ESASMC", queryURL: "https://api.minetools.eu/query/play.esasmc.com/25565", pingURL: "https://api.minetools.eu/ping/play.esasmc.com/25565" };
-//dont want to config this shit lmao im hardcoding 
+    const server =  { name: "Server", queryURL: "https://api.minetools.eu/query/server/port", pingURL: "https://api.minetools.eu/ping/server/port" };
+//damm open source be diff 
     let msg = await message.channel.send({embeds: [
         new MessageEmbed()
             .setTitle("Loading server status... This may take a few seconds.")
@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
         await rp(server.pingURL).then(content => {
                 const json = JSON.parse(content);
                 if (json.error) fields.push({
-                    name: "ESASMC:",
+                    name: "Server:",
                     value: "Offline"
                 })
                 else {

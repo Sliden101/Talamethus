@@ -8,8 +8,6 @@
 	"ticketcategorybackup": "placeholder 4",
 	"ticketcategorybackup2": "placeholder 5",
 	"staffid": "placeholder 6",
-	"title" : "Minecraft Server: {server-ip}",
-	"field0" : "Description",
-	"field2" : "Version",
-	"welcome": "placeholder 7"
+	"welcome": "",
+	"excludedfromantispam": ""
 }
