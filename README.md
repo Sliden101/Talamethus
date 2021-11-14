@@ -1,2 +1,2 @@
 # Bot
-bussy
+Just another bot
