@@ -1,5 +1,5 @@
-const googleIt = require('google-it')
-const { MessageEmbed } = require(`discord.js`);
+const googleIt = import('google-it')
+const { MessageEmbed } = import(`discord.js`);
 
 module.exports.run = (bot, message, args) => {
     const embed = new MessageEmbed()

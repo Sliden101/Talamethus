@@ -1,5 +1,5 @@
-let { bot } = require(ROOT_PATH + "/index")
-const config = require(ROOT_PATH + "/config.json")
+let { bot } = import(ROOT_PATH + "/index")
+const config = import(ROOT_PATH + "/config.json")
 
 bot.on('guildMemberAdd', member => {
 	const welcome_channel = bot.channels.cache.get(config.welcome);

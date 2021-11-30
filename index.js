@@ -1,9 +1,9 @@
-const chalk = require('chalk');
-const Discord = require('discord.js');
-const fs = require('fs');
-const config = require('./config.json');
-const randapi1 = require("@rilecraft/random-api")
-const { loadCommands } = require('./utils/commandHandler');
+const chalk = import('chalk');
+const Discord = import('discord.js');
+const fs = import('fs');
+const config = import('./config.json');
+const randapi1 = import("@rilecraft/random-api")
+const { loadCommands } = import('./utils/commandHandler');
 
 let bot = new Discord.Client({
     intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_BANS",
@@ -26,7 +26,7 @@ global.ROOT_PATH = __dirname;
 let events = fs.readdirSync(ROOT_PATH + '/events').filter(x => x.endsWith(".js"));
 events.forEach(x => {
     try {
-        require('./events/' + x);
+        import('./events/' + x);
     } catch (error) {
         console.log(chalk.bgRedBright("[ERROR]"), `An error occured while trying to load the ${x} event`);
     }

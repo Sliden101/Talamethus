@@ -1,9 +1,9 @@
-const { MessageEmbed } = require('discord.js')
-const config = require(ROOT_PATH + '/config.json');
+const { MessageEmbed } = import('discord.js')
+const config = import(ROOT_PATH + '/config.json');
 
 module.exports.run = (bot, message, args) => {
 
-    let { log: parsed, findCommand } = require(ROOT_PATH + '/utils/commandHandler');
+    let { log: parsed, findCommand } = import(ROOT_PATH + '/utils/commandHandler');
 
     let embed = new MessageEmbed()
         .setTitle("Help!").setColor("BLUE").setDescription("Commands Help list");
@@ -29,7 +29,7 @@ module.exports.run = (bot, message, args) => {
                 `**description:** ${cmd.description}`,
                 cmd.aliases.length == 0 ? null : `**aliases:** ${aliases}`,
                 `**usage:** ${usage}`,
-                `**requiredPermission:** ${cmd.requiredPermission == null ? "none" : cmd.requiredPermission}`,
+                `**importdPermission:** ${cmd.importdPermission == null ? "none" : cmd.importdPermission}`,
                 subCommands != null ? `**subcommands:** ${subCommands}` : null
             ]
 
@@ -49,7 +49,7 @@ module.exports.run = (bot, message, args) => {
 module.exports.info = {
     name: 'help',// default = file name (without the extention)
     description: "Shows you the list of commands.",// default is "None"
-    requiredPermission: null,// default is null
+    importdPermission: null,// default is null
     aliases: ['?', "h"], // default is null
     usage: '[command] [subcommand]' // default is null
 }

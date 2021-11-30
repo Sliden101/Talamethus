@@ -1,6 +1,6 @@
-const { MessageEmbed } = require("discord.js")
-const config = require(ROOT_PATH + "/config.json")
-const rp = require("request-promise");
+const { MessageEmbed } = import("discord.js")
+const config = import(ROOT_PATH + "/config.json")
+const rp = import("request-promise");
 
 module.exports.run = async (bot, message, args) => {
     const server =  { name: "Server", queryURL: "https://api.minetools.eu/query/server/port", pingURL: "https://api.minetools.eu/ping/server/port" };

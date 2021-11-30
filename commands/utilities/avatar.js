@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js")
+const { MessageEmbed } = import("discord.js")
 
 
 module.exports.run = async (bot, message, args) => {

@@ -1,7 +1,7 @@
-const { MessageEmbed } = require("discord.js")
+const { MessageEmbed } = import("discord.js")
 
 module.exports.run = async (bot, message, args) => {
-    let { randapi } = require(ROOT_PATH + '/index');
+    let { randapi } = import(ROOT_PATH + '/index');
     const run = await randapi.getRun()
     message.channel.send({
         embeds: [

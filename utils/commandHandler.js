@@ -1,6 +1,6 @@
-const { Collection, Permissions } = require('discord.js');
-const config = require('../config.json');
-const fs = require('fs');
+const { Collection, Permissions } = import('discord.js');
+const config = import('../config.json');
+const fs = import('fs');
 
 let log = {
     categories: [],
@@ -89,8 +89,8 @@ let findCommand = (list, commandsList, message) => {
         else if (cmd != null && cmd.subCommands != null) temp = cmd.subCommands.find(x => x.name == command || x.aliases.includes(command));
 
         if (message != null) {
-            if (temp != null && temp.requiredPermission != null && !message.member.permissions.has(temp.requiredPermission)) { // Permission check
-                message.channel.send({ content: config.missing_permission.replace("{PERMISSION}", temp.requiredPermission) }); // Missing permission message
+            if (temp != null && temp.importdPermission != null && !message.member.permissions.has(temp.importdPermission)) { // Permission check
+                message.channel.send({ content: config.missing_permission.replace("{PERMISSION}", temp.importdPermission) }); // Missing permission message
                 return;
             };
         };
@@ -121,7 +121,7 @@ let loadCommands = (rootPath) => {
                     description: "none",
                     usage: null,
                     aliases: [],
-                    requiredPermission: null,
+                    importdPermission: null,
                     path: path.split('\\').pop(),
                     size: 0,
                     depth: (!parent ? 0 : parent.depth),
@@ -139,7 +139,7 @@ let loadCommands = (rootPath) => {
                     let _files = fs.readdirSync(`${path}/${file}`);
                     let main = _files.find(x => x.toLowerCase() == file.toLowerCase() + '.js');
                     if (main) {
-                        let command = require(`${path}/${file}/${main}`);
+                        let command = import(`${path}/${file}/${main}`);
                         _command = merge(_command, command.info || {});
                     }
                     _command.usage = `${parent != null ? `${parent.usage} ` : ''}${_command.name}${(_command.usage == null || _command.usage.trim().length == 0) ? '' : " " + _command.usage.trim()}`;
@@ -148,7 +148,7 @@ let loadCommands = (rootPath) => {
                 } else {
                     _command.size = stats.size;
                     if (parent != null && (parent.file.toLowerCase() + '.js') == file.toLowerCase()) continue;
-                    let command = require(`${path}/${file}`);
+                    let command = import(`${path}/${file}`);
 
                     _command = merge(_command, command.info || {});
                     _command.usage = `${parent != null ? `${parent.usage} ` : ''}${_command.name}${(_command.usage == null || _command.usage.trim().length == 0) ? '' : " " + _command.usage.trim()}`;
@@ -164,10 +164,10 @@ let loadCommands = (rootPath) => {
                     });
                 };
 
-                if (_command.requiredPermission != null && checkPermission(_command.requiredPermission) == false) {
+                if (_command.importdPermission != null && checkPermission(_command.importdPermission) == false) {
                     _command.errors.push({
                         path: _command.path + '/' + _command.file,
-                        error: `"${_command.requiredPermission}" is not a valid permission. check https://discord.com/developers/docs/topics/permissions for more information`
+                        error: `"${_command.importdPermission}" is not a valid permission. check https://discord.com/developers/docs/topics/permissions for more information`
                     });
                 };
 

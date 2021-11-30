@@ -1,8 +1,8 @@
-const chalk = require('chalk');
-const { MessageEmbed } = require('discord.js');
-let { bot } = require('../index');
-const config = require(ROOT_PATH + '/config.json');
-const { findCommand } = require('../utils/commandHandler');
+const chalk = import('chalk');
+const { MessageEmbed } = import('discord.js');
+let { bot } = import('../index');
+const config = import(ROOT_PATH + '/config.json');
+const { findCommand } = import('../utils/commandHandler');
 
 bot.on('messageCreate', async (message) => {
     if (message.channel.type == 'dm' || message.author.bot == true || !message.content.startsWith(config.prefix)) return;

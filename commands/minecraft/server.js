@@ -1,6 +1,6 @@
-const { MessageEmbed } = require("discord.js")
-const rp = require("request-promise");
-const config = require("../../config.json")
+const { MessageEmbed } = import("discord.js")
+const rp = import("request-promise");
+const config = import("../../config.json")
 let cum = {name: "Players", value: "Online: {online}\nMax: {max}" };
 let cum1 = "Minecraft Server: {server-ip}"
 module.exports.run = async (bot, message, args) => {

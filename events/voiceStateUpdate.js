@@ -1,6 +1,6 @@
-let { bot } = require(ROOT_PATH + '/index');
-const { Collection } = require('discord.js')
-const config = require(ROOT_PATH + '/config.json');
+let { bot } = import(ROOT_PATH + '/index');
+const { Collection } = import('discord.js')
+const config = import(ROOT_PATH + '/config.json');
 const voiceCollection = new Collection();
 
 bot.on("voiceStateUpdate", async (oldState, newState) => {

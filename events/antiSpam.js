@@ -1,5 +1,5 @@
-let { bot } = require("../index.js");
-const config = require("../config.json")
+let { bot } = import("../index.js");
+const config = import("../config.json")
 const usersMap = new Map();
 const LIMIT = 7;
 const DIFF = 5000;
